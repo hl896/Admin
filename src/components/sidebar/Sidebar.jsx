@@ -18,8 +18,7 @@ import Topbar from "../topbar/Topbar";
 
 export default function Sidebar() {
   return (
-    <>
-    <Topbar />
+  
     <div className="sidebar">
       <div className="sidebarWrapper">
         <div className="sidebarMenu">
@@ -102,6 +101,6 @@ export default function Sidebar() {
         </div>
       </div>
     </div>
-  </>
+  
   );
 }

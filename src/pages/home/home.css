@@ -3,6 +3,8 @@
 }
 
 .homeWidgets{
+    position: sticky;
+
     display: flex;
     margin: 20px;
 }

@@ -19,38 +19,32 @@ import { useSelector } from "react-redux";
 
 function App() {
 
-  const admin = useSelector((state) => state.user?.currentUser?.isAdmin);
-
+  const admin = useSelector((state)=> state.user.currentUser?.isAdmin);
   return (
-    <>
-        <Router>
+    <Router>
+    
+      {!admin ? <Login />:
+      <>
+        <Topbar />
+        <div className="container">
+          <Sidebar />
           <Routes>
-          {/* <Route path="/login"  element={admin? <Navigate replace to="/"  />: <Login/> } /> */}
-          <Route path="/login"  element={ <Login/> } />
-          
-            {admin && (
-              <Route element={<Sidebar />}>
-                  <Route exact path="/" element={<Home />} />
-                  
-                  <Route path="/users" element={<UserList />} />
-                    
-                  
-                  <Route path="/user/:userId" element={<User />} />
-                  
-                  <Route path="/newUser" element={<NewUser />}  />
-                    
-                  <Route path="/products" element={<ProductList />} />
-                    
-                  <Route path="/product/:productId" element={<Product />} />
-                    
-                  
-                  <Route path="/newproduct" element={<NewProduct />}  />
-                    
-              </Route>
-            )}
+            <Route
+              path="/login"
+              element={admin ? <Navigate to="/" /> : <Login />}
+            />
+
+            <Route exact path="/" element={<Home />}></Route>
+            <Route path="/users" element={<UserList />}></Route>
+            <Route path="/user/:userId" element={<User />}></Route>
+            <Route path="/newUser" element={<NewUser />}></Route>
+            <Route path="/products" element={<ProductList />}></Route>
+            <Route path="/product/:productId" element={<Product />}></Route>
+            <Route path="/newproduct" element={<NewProduct />}></Route>
           </Routes>
-        </Router>
-    </>
+        </div>
+      </>}
+    </Router>
   );
 }
 

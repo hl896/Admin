@@ -68,3 +68,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+###  `yarn install` or `yarn`
+###  `yarn add axios @reduxjs/toolkit react-redux  react-router-dom redux-persist timeago.js`
+###  `yarn build`
+###  `yarn start`
